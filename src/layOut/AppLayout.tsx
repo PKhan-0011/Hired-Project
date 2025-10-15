@@ -8,7 +8,7 @@ const AppLayout = () => {
 
         <div className='grid-background absolute inset-0 z-0'></div>
          
-         <main className="min-h-screen container relative z-10">
+         <main className="min-h-screen w-full  relative z-10">
              <Header />
              <Outlet/>
          </main>
