@@ -12,7 +12,7 @@ const AppLayout = () => {
              <Header />
              <Outlet/>
          </main>
-         <div className='text-center bg-gray-600 mt-10 p-10 font-bold text-2xl z-10'>Made ❤️ with by @techy_Prey</div>
+         <div className='text-center bg-gray-600 mt-10 p-10 font-bold text-2xl '>Made ❤️ with by @techy_Prey</div>
     </div>
   );
 }
