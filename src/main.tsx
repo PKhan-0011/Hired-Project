@@ -3,14 +3,26 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom';
+import {ClerkProvider} from '@clerk/clerk-react'
+import { shadesOfPurple } from '@clerk/themes';
+
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error('Missing Publishable Key')
+}
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    
-       <BrowserRouter>
-            <App />
-       </BrowserRouter>
-  
+     <ClerkProvider   
+        appearance={{
+          baseTheme: shadesOfPurple
+        }}
+     publishableKey={PUBLISHABLE_KEY}>
+          <BrowserRouter>
+              <App />
+          </BrowserRouter>
+     </ClerkProvider>
   </StrictMode>,
 )
