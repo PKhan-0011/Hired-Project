@@ -88,17 +88,20 @@ const LandingPage = () => {
          
          {/* Accordian*/}
          
-        <div className='container bg-amber-500 '>
-        <Accordion type="multiple" className='w-full'>
-           {faqs.map((x, index) => (
-              <AccordionItem key={index} value={`item-${index+1}`}>
-             <AccordionTrigger>{x.question}</AccordionTrigger>
-             <AccordionContent>
-               {x.answer}
-             </AccordionContent>
-           </AccordionItem> 
-           ))}
-       </Accordion>
+        <div className='container bg-amber-500 ml-10 flex justify-between'>
+             <Accordion
+                  type="multiple"
+                  className='w-full'
+              >
+               {faqs.map((index, faq) => (
+                    <AccordionItem key={index} value={`items-${index+1}`}>
+                      <AccordionTrigger><h1>{faq.question}</h1></AccordionTrigger>
+                      <AccordionContent className="flex flex-col gap-4 text-balance">
+                       <p>{faq.answer}</p>
+                      </AccordionContent>
+                    </AccordionItem> 
+               ))}
+             </Accordion>
         </div>
 
    </main>
