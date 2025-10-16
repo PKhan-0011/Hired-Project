@@ -1,0 +1,37 @@
+[
+    {
+        "name": "amazon",
+        "path": "/componies/amazon.svg",
+        "id": 1
+    },
+    {
+        "name": "atlassian",
+        "path": "/componies/atlassain.svg",
+        "id": 2
+    },
+    {
+        "name": "google",
+        "path": "/componies/google.webp",
+        "id": 3
+    },
+    { 
+        "name": "ibm",
+        "path": "/componies/ibm.svg",
+        "id": 4
+    },
+    {
+        "name": "meta",
+        "path": "/componies/microsoft.svg",
+        "id": 5
+    },
+    {
+        "name": "netflix",
+        "path": "/componies/netflix (1).png",
+        "id": 6
+    },
+    {
+        "name": "uber",
+        "path": "/componies/uber.svg",
+        "id": 7
+    }
+]

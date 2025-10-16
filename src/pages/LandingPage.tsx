@@ -21,7 +21,7 @@ const LandingPage = () => {
                 <Link to='/post-jobs'><Button className='text-3xl font-semibold p-8 bg-red-900 text-white hover:bg-gray-200 hover:text-black'>Post a Jobs</Button></Link>
            </div>
 
-            {/*carousel */}
+            {/*carousel */} // abb Yha p add kar lo sara data okkh!..
        </div>
 
        {/* banner */}
