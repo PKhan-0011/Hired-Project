@@ -8,10 +8,22 @@ import {
 } from "@/components/ui/carousel";
 
 import data from '@/data/companies.json';
+import Autoplay from "embla-carousel-autoplay";
+import faqs from '@/data/faq.json';
 
-import Autoplay from "embla-carousel-autoplay"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
-
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 const LandingPage = () => {
   return (
@@ -40,27 +52,58 @@ const LandingPage = () => {
           delay: 2000,
         }),
       ]}
-     className="w-full py-10 my-15 mx-15"
+     className="w-full py-15 my-15 mx-auto  over-flow-hidden container"
      >
 
       <CarouselContent  className='flex items-center gap-5 sm:gap-20 '>
         {data.map((x) => 
           <CarouselItem key={x.id} className='md:basis-1/3 lg:basis-1/6'>
-                <img src={x.path} alt={x.name} className='h-9 sm:h-14 object-contain'/>
+                <img src={x.path} alt={x.name} className='h-12 sm:h-14 object-contain'/>
           </CarouselItem>
        )}
       </CarouselContent>
       
     </Carousel>
+         
+         <div className= 'flex justify-center mt-30 px-8 '>
+              <img src="/banner.jpeg" alt="#Hired-Image" className=' w-full '/>
+         </div>
+       
+        <section className=' mt-30 px-8 grid grid-cols-1 md:grid-cols-2 gap-5'>
+              <Card className='py-10 my-10 '> 
+                   <CardHeader className='space-y-10'>
+                     <CardTitle className='text-3xl font-semibold'>For Job Seeksers</CardTitle>
+                     <CardDescription className='text-2xl text-white'>Search and apply for jobs, track applications, and more.</CardDescription>
+                     
+                   </CardHeader>
+             </Card>
 
-       {/* banner */}
-        <section>
-             {/* cards*/}
+             <Card className='py-10 my-10'>
+                   <CardHeader className='space-y-10'>
+                     <CardTitle className='text-3xl font-semibold'>For Employers</CardTitle>
+                     <CardDescription className='text-2xl text-white'>Post jobs, manage applications, and find the best candidates..</CardDescription>
+                   </CardHeader>
+             </Card>
         </section>
+         
+         {/* Accordian*/}
+         
+        <div className='container bg-amber-500 '>
+        <Accordion type="multiple" className='w-full'>
+           {faqs.map((x, index) => (
+              <AccordionItem key={index} value={`item-${index+1}`}>
+             <AccordionTrigger>{x.question}</AccordionTrigger>
+             <AccordionContent>
+               {x.answer}
+             </AccordionContent>
+           </AccordionItem> 
+           ))}
+       </Accordion>
+        </div>
 
-        {/* Accordian */ }
    </main>
   )
 }
 
 export default LandingPage
+
